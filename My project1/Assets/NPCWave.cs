@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPCWave : MonoBehaviour
 {
     [SerializeField] private Animator Animator;
+    
     // Start is called before the first frame update
     void Start()
     {

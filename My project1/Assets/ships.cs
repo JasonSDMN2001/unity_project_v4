@@ -5,7 +5,7 @@ using UnityEngine;
 public class ships : MonoBehaviour
 {
     [SerializeField] 
-    private float speed = 1;
+    public float speed = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +17,8 @@ public class ships : MonoBehaviour
     void Update()
     {
         transform.position = transform.position + transform.forward * speed * Time.deltaTime;
+        
 
     }
+    
 }
