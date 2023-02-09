@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Cinemachine;
 
 public class PauseMenuManager : MonoBehaviour
@@ -15,7 +16,7 @@ public class PauseMenuManager : MonoBehaviour
         previousTimeScale = Time.timeScale;
         onPause = false;
         pausescreen.SetActive(false);
-            
+
     }
 
     // Update is called once per frame
@@ -43,9 +44,13 @@ public class PauseMenuManager : MonoBehaviour
     }
     void UnPause()
     {
-        onPause=false;
+        onPause = false;
         pausescreen.SetActive(false);
         cinemachineBrain.enabled = !onPause;
         Time.timeScale = previousTimeScale;
+    }
+    void Quit()
+    {
+        Application.Quit();
     }
 }

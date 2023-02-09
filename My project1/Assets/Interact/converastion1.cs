@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class converastion1 : MonoBehaviour
+public class converastion1 : MonoBehaviour ,IInteractable
 {
     // Start is called before the first frame update
     void Start()
@@ -16,15 +16,15 @@ public class converastion1 : MonoBehaviour
         
     }
     [SerializeField] private GameObject indicator;
-    [TextArea(3, 10)]
-    public string text;
+    //[TextArea(3, 10)]
+    //public string text;
 
     public void OnInteract(Interactor interactor)
     {
         indicator.SetActive(false); //hide
         //call interactor's public method ReceiveInteract
         //...with override method that gets a string as a parameter
-        interactor.ReceiveInteract(text);
+        //interactor.ReceiveInteract(text);
 
     }
 
