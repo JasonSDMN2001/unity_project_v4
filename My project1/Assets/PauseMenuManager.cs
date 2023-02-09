@@ -49,8 +49,9 @@ public class PauseMenuManager : MonoBehaviour
         cinemachineBrain.enabled = !onPause;
         Time.timeScale = previousTimeScale;
     }
-    void Quit()
+    public void Quit()
     {
+        Debug.Log("quit");
         Application.Quit();
     }
 }
