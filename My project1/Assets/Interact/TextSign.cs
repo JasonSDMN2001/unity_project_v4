@@ -15,7 +15,6 @@ public class TextSign : MonoBehaviour, IInteractable
         //call interactor's public method ReceiveInteract
         //...with override method that gets a string as a parameter
         interactor.ReceiveInteract(text);
-        
     }	
 	
 	//unimplemented Methods
