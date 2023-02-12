@@ -26,4 +26,8 @@ public class triggers : MonoBehaviour
             vcamSwitch.TakeControl();
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        UIManager.Instance.ShowMessage("");
+    }
 }

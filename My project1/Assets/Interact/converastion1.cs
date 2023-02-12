@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class converastion1 : MonoBehaviour ,IInteractable
 {
+    [SerializeField] protected Rigidbody doorRb;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +22,15 @@ public class converastion1 : MonoBehaviour ,IInteractable
 
     public void OnInteract(Interactor interactor)
     {
+        if (doorRb.isKinematic == true)
+        {
+            doorRb.isKinematic = false;
+        }
         indicator.SetActive(false); //hide
         //call interactor's public method ReceiveInteract
         //...with override method that gets a string as a parameter
         interactor.ReceiveInteract(text);
-
+        
     }
 
     //unimplemented Methods

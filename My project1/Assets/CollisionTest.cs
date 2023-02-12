@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.InputSystem.InputRemoting;
 
 public class CollisionTest : MonoBehaviour
 {
+    [SerializeField] string message;
+    [SerializeField] protected Rigidbody doorRb;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +18,18 @@ public class CollisionTest : MonoBehaviour
     {
         
     }
-    public void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        string othername = collision.gameObject.name;
-        Debug.Log(othername);
+        if (doorRb.isKinematic == true)
+        {
+            if (other.CompareTag("Player"))
+            {
+                UIManager.Instance.ShowMessage(message);
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        UIManager.Instance.ShowMessage("");
     }
 }
