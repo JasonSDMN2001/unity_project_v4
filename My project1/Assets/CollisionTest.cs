@@ -24,6 +24,7 @@ public class CollisionTest : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
+           
                 UIManager.Instance.ShowMessage(message);
             }
         }
